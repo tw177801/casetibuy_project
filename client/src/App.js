@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from '../src/components/Home.jsx';
+import Title from '../src/components/Title.jsx';
+import AllProduct from './pages/AllProduct.jsx';
+import IphoneAll from './pages/IphoneAll.jsx';
+import IphoneType from './pages/IphoneType.jsx';
+import Model from './pages/Model.jsx';
+import ModelAll from './pages/ModelAll.jsx';
+import ProductList from './components/ProductList.jsx';
 
-function App() {
+
+
+export default function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/title" element={<Title/>}/>
+          <Route path="/allproduct" element={<AllProduct/>}/>
+          <Route path="/iphoneall" element={<IphoneAll/>}/>
+          <Route path="/iphonetype" element={<IphoneType/>}/>
+          <Route path="/model" element={<Model/>}/>
+          <Route path="/modelall" element={<ModelAll/>}/>
+          <Route path="/productList" element={<ProductList/>}/>
+        </Routes>
+      </BrowserRouter>
+
     </div>
   );
 }
 
-export default App;
